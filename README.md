@@ -10,23 +10,23 @@ The project combines **Retrieval-Augmented Generation (RAG)**, **vector search**
 
 ## ✨ Features
 
-- 📄 Upload a research paper in **PDF** format
-- 🔎 Split documents into chunks and index them with **FAISS**
-- 🧠 Generate embeddings using `sentence-transformers/all-MiniLM-L6-v2`
-- 🤖 Use **Qwen/Qwen2.5-1.5B-Instruct** as the final application LLM
-- 🧰 Route questions between:
+- Upload a research paper in **PDF** format
+- Split documents into chunks and index them with **FAISS**
+- Generate embeddings using `sentence-transformers/all-MiniLM-L6-v2`
+- Use **Qwen/Qwen2.5-1.5B-Instruct** as the final application LLM
+- Route questions between:
   - **DOCUMENT** → search the uploaded research paper
   - **CALCULATOR** → perform mathematical calculations
   - **DIRECT** → answer using general knowledge
-- 💬 Maintain conversational history
-- 🔄 Resolve follow-up questions such as:
+- Maintain conversational history
+- Resolve follow-up questions such as:
   - “What dataset was used?”
   - “How many instances does it contain?”
-- 📌 Return source page information for document-based answers
-- 🎯 Provide **High / Medium / Low** confidence
-- 🛡️ Apply grounding rules to reduce unsupported answers
-- 🌐 Provide a Streamlit chat interface
-- ☁️ Includes Google Colab support for running the application and optionally exposing it through a Cloudflare tunnel
+- Return source page information for document-based answers
+- Provide **High / Medium / Low** confidence
+- Apply grounding rules to reduce unsupported answers
+- Provide a Streamlit chat interface
+- Includes Google Colab support for running the application and optionally exposing it through a Cloudflare tunnel
 
 ---
 
@@ -452,98 +452,3 @@ FAISS
 The final backend retrieves up to **4 relevant chunks** for a query.
 
 ---
-
-## ⚠️ Limitations
-
-This project is intended as a learning and research prototype.
-
-Some current limitations include:
-
-- PDF-only document input
-- In-memory vector storage
-- One active uploaded document at a time
-- No persistent database for documents
-- No authentication or user management
-- Routing is based on predefined rules/keywords
-- The local 1.5B model is relatively small compared with larger instruction-tuned models
-- CPU inference can be significantly slower than GPU inference
-- Retrieval quality depends on PDF extraction and chunking
-- Confidence is model/application output, not a statistically calibrated probability
-- Direct questions can use general model knowledge rather than the uploaded paper
-
----
-
-## 🔐 Privacy
-
-The application is designed around local document processing and local model inference in the demonstrated setup.
-
-If deployed to a public server, additional security and privacy controls should be added before using sensitive research documents.
-
----
-
-## 🔮 Possible Future Improvements
-
-- Add persistent vector databases such as Chroma, Qdrant, or another production-ready store
-- Support multiple research papers simultaneously
-- Add document deletion and management
-- Improve retrieval with hybrid search
-- Add reranking
-- Add citation highlighting
-- Add streaming responses
-- Add conversation persistence
-- Add automated evaluation metrics
-- Add OCR support for scanned PDFs
-- Add support for tables and figures
-- Add a stronger or configurable LLM
-- Add authentication and deployment configuration
-- Add automated tests for routing, retrieval, and grounding
-
----
-
-## 📌 Project Goal
-
-The goal of this project is to demonstrate how an **agentic AI research assistant** can combine:
-
-```text
-LLM
- +
-RAG
- +
-Vector Search
- +
-Tools
- +
-Conversation Memory
- +
-Source Attribution
- +
-Grounding
-```
-
-to create a practical system for interacting with research papers.
-
----
-
-## 🤝 Contributing
-
-Contributions, improvements, and experiments are welcome.
-
-If you find a bug or have an idea for improving retrieval, routing, grounding, or the Streamlit interface, feel free to open an issue or submit a pull request.
-
----
-
-## 📄 License
-
-Add the license you want to use for this repository, for example:
-
-```text
-MIT License
-```
-
-before publishing the project for reuse.
-
----
-
-## ⭐ If You Find This Project Useful
-
-Consider starring the repository and sharing feedback or improvements.
